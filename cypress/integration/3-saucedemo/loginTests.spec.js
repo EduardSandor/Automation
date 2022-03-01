@@ -18,5 +18,6 @@ describe('Visits the Sauce Demo website', () => {
     cy.get('[data-test=username]').type(`${loginUsername}{enter}`)
     cy.get('[data-test=password]').type(`${loginPassword}{enter}`)
     cy.get('[data-test=login-button]').click()
+    cy.url().should('include', '/inventory.html')
   })
 })
