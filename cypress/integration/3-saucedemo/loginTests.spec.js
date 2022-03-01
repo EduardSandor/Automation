@@ -11,4 +11,12 @@ describe('Visits the Sauce Demo website', () => {
     cy.get('input#user-name.input_error.form_input').invoke('attr', 'placeholder').should('contain', 'Username')
     cy.get('input#password.input_error.form_input').invoke('attr', 'placeholder').should('contain', 'Password')
   })
+  it('Add valid input and login', () => {
+    const loginUsername = 'standard_user'
+    const loginPassword = 'secret_sauce'
+
+    cy.get('[data-test=username]').type(`${loginUsername}{enter}`)
+    cy.get('[data-test=password]').type(`${loginPassword}{enter}`)
+    cy.get('[data-test=login-button]').click()
+  })
 })
