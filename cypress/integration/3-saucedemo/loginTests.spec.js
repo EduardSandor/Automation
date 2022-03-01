@@ -19,5 +19,8 @@ describe('Visits the Sauce Demo website', () => {
     cy.get('[data-test=password]').type(`${loginPassword}{enter}`)
     cy.get('[data-test=login-button]').click()
     cy.url().should('include', '/inventory.html')
+    cy.get('.bm-burger-button').click()
+    cy.get('a#logout_sidebar_link.bm-item.menu-item').click()
+    cy.url().should('not.include', '/inventory.html')
   })
 })
