@@ -9,7 +9,7 @@ describe('Visits the Sauce Demo website', () => {
   })
   it('Checks the placeholder text from the username and password fields', () => {
     cy.get('[data-test=username]').invoke('attr', 'placeholder').should('contain', 'Username')
-    cy.get('[data-test=password]').invoke('attr', 'placeholder').should('contain', 'Password')
+    cy.get('[data-test=password').invoke('attr', 'placeholder').should('contain', 'Password')
   })
   it('Add valid input and login', () => {
     const loginUsername = 'standard_user'
